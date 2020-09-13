@@ -27,6 +27,12 @@ module.exports = {
       {
         test: /\.(le|c)ss$/,
         use: [
+          {
+            loader: 'cache-loader',
+            options: {
+              cacheDirectory: '.tmp/css-loader'
+            }
+          },
           isDev ? { loader: 'style-loader' } : MiniCSSExtractPlugin.loader,
           {
             loader: 'css-loader',
