@@ -97,6 +97,13 @@ module.exports = {
       }
     }
   },
+  resolve: {
+    extensions: ['jsx', 'js'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  },
   plugins: [
     new VueLoaderPlugin(),
     new WebpackBar(),
